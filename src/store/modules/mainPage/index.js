@@ -1,34 +1,29 @@
-import API_BASE_URL from '@/config';
 import axios from 'axios';
 
 export default {
   state() {
     return {
-      flimsList: false,
-      productItem: null,
+      filmsData: [],
     };
   },
   mutations: {
     updateFilmsList(state, data) {
-      state.productItem = data;
+      state.filmsData = data;
     },
   },
   actions: {
-    async loadFilmsList(context, id) {
+    async loadFilmsList(context) {
       try {
-        const response = await axios.get(API_BASE_URL + '/api/products/' + id);
-        context.commit('updateProductItem', response.data);
+        const response = await axios.get('films/');
+        context.commit('updateFilmsList', response.data);
       } catch {
-        context.commit('setProductLoadingFailed', 'Не удалось загрузить список фильмов');
+        console.log('ошибка');
       }
     },
   },
   getters: {
-    productLoadingFailed(state) {
-      return state.productLoadingFailed;
-    },
-    productItem(state) {
-      return state.productItem;
+    getFilmsList(state) {
+      return state.filmsData.results;
     },
   },
 };

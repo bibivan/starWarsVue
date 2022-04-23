@@ -5,7 +5,7 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/MainPage',
+    path: '/',
     name: 'MainPage',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
