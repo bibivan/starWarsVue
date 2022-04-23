@@ -1,0 +1,283 @@
+.hide {
+  display: none !important;
+}
+
+.hide-desktop {
+  @include desktop {
+    display: none !important;
+  }
+}
+
+.hide-sm-desktop {
+  @include sm-desktop {
+    display: none !important;
+  }
+}
+
+.hide-except-sm-desktop {
+  @include xs-desktop {
+    display: none !important;
+  }
+
+  @include mobile {
+    display: none !important;
+  }
+}
+
+.hide-tablet {
+  @include tablet {
+    display: none !important;
+  }
+}
+
+.hide-only-tablet{
+  @include only-tablet {
+    display: none !important;
+  }
+}
+
+.hide-mobile {
+  @include mobile {
+    display: none !important;
+  }
+}
+
+.hide-only-mobile {
+  @include only-mobile {
+    display: none !important;
+  }
+}
+
+.margin-top-x1 {
+  margin-top: 32px!important;
+
+  @include only-mobile {
+    margin-top: 24px!important;
+  }
+}
+
+.margin-top-x2 {
+  margin-top: 64px!important;
+
+  @include only-mobile {
+    margin-top: 48px!important;
+  }
+}
+
+.margin-bottom-x1 {
+  margin-bottom: 32px!important;
+
+  @include only-mobile {
+    margin-bottom: 24px!important;
+  }
+}
+
+.margin-bottom-x2 {
+  margin-bottom: 64px!important;
+
+  @include only-mobile {
+    margin-bottom: 48px!important;
+  }
+}
+
+.no-margin-bottom {
+  margin-bottom: 0!important;
+}
+
+.padding-vertical-x1 {
+  padding-top: 40px !important;
+  padding-bottom: 40px !important;
+
+  @include mobile {
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+  }
+}
+
+.padding-top-x1 {
+  padding-top: 40px !important;
+
+  @include mobile {
+    padding-top: 30px !important;
+  }
+}
+
+.no-padding-desktop {
+  @include desktop {
+    padding: 0 !important;
+  }
+}
+
+.no-padding-mobile {
+  @include mobile {
+    padding: 0 !important;
+  }
+}
+
+.no-padding-bottom-mobile {
+  @include mobile {
+    padding-bottom: 0 !important;
+  }
+}
+
+.no-padding-top-mobile {
+  @include mobile {
+    padding-top: 0 !important;
+  }
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
+.no-padding-top {
+  padding-top: 0 !important;
+}
+
+.no-padding-bottom {
+  padding-bottom: 0 !important;
+}
+
+.color-primary {
+  color: $colorPrimary !important;
+}
+
+.color-secondary {
+  color: $colorSecondary !important;
+}
+
+.color-black {
+  color: $colorBlack !important;
+}
+
+.color-white{
+  color:$colorWhite !important;
+}
+
+.color-gray-500 {
+  color:$colorGray500 !important;
+}
+
+.nobr {
+  white-space: nowrap;
+}
+
+.bg-color-black {
+  background-color: $colorBlack !important;
+}
+
+.bg-color-white {
+  background-color: $colorWhite !important;
+}
+
+.bg-color-primary {
+  background-color: $colorPrimary !important;
+}
+
+.bg-color-gray {
+  background-color: $colorGray100 !important;
+}
+
+.bg-color-gray-lighter {
+  background-color: $colorGray50 !important;
+}
+
+.bg-color-secondary {
+  background-color: $colorSecondary !important;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-space-between-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-start-center {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.flex-end-center {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.border-top-opacity-black {
+  border-top: 1px solid $colorBlackOpacity;
+}
+
+.relative {
+  position: relative;
+  z-index: 5;
+}
+
+.reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.reset-btn {
+  padding: 0;
+  border: none;
+  background: transparent;
+}
+
+.reset-input {
+  padding: 0;
+  border: none;
+  background: transparent;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+
+.stars, .twinkling {
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  width:100%;
+  height: 100%;
+  display:block;
+}
+
+.stars {
+  background:#000 url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
+  z-index:0;
+}
+
+.twinkling {
+  background-image: url(https://i.postimg.cc/CLpNr4PF/twinkling.png);
+  animation: 3s twinkle infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes twinkle {
+  from {backrgound-position: 0}
+  to {background-position: -100px 0}
+}

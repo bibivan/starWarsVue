@@ -1,0 +1,410 @@
+@import "extends";
+@import "variables";
+
+:root {
+  --viewport-height: 100%;
+}
+
+h1, .h1 {
+  @extend .h1-bold;
+
+  @include only-mobile {
+    margin-bottom: $indent16;
+    font-size: 42px;
+  }
+
+  @include x-mobile {
+    font-size: 38px;
+  }
+}
+
+h2, .h2 {
+  @extend .h2-bold;
+
+  @include only-mobile {
+    font-size: 32px;
+  }
+
+  @include x-mobile {
+    font-size: 28px;
+  }
+}
+
+h3, .h3 {
+  @extend .h3-bold;
+
+  @include x-mobile {
+    font-size: 20px;
+  }
+}
+
+h4, .h4 {
+  @extend .h4-bold;
+
+  @include x-mobile {
+    font-size: 16px;
+  }
+}
+
+h5, .h5 {
+  @extend .h5-bold;
+}
+
+a, .link {
+  text-decoration: none;
+  outline: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+
+
+  &.chevron-right {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+
+    .circle {
+      @extend .flex-center;
+      flex-shrink: 0;
+      margin-left: 15px;
+      width: 28px;
+      height: 28px;
+      border: 2px solid $colorPrimary;
+      border-radius: $round;
+      background-color: $colorPrimary;
+      transition: background-color 0.2s ease-in-out;
+
+      .chevron {
+        color: $colorSecondary;
+        transform: translateX(1px);
+      }
+    }
+
+
+    .chevron {
+      display: inline-block;
+      width: 6px;
+      height: 12px;
+      transition: color 0.2s ease-in-out;
+    }
+
+    &:hover {
+      @include desktop {
+        .circle  {
+          background-color: $colorWhite;
+
+          .chevron {
+            color: $colorPrimary;
+          }
+        }
+      }
+    }
+  }
+
+  &.chevron-down {
+    display: inline-flex;
+    align-items: center;
+
+    &:after {
+      content: '';
+      display: inline-block;
+      margin-left: 5px;
+      width: 8px;
+      height: 4px;
+      //background: url('../img/icons/chevron-down.svg') center / contain no-repeat;
+      transition: transform 0.2s ease-in-out;
+    }
+  }
+
+  &.no-before {
+    &:before {
+      display: none;
+    }
+  }
+
+  &.no-after {
+    &:after {
+      display: none;
+    }
+  }
+
+}
+
+.section {
+  display: block;
+  position: relative;
+  z-index: 10;
+  margin: 0;
+  padding: $sectionIndent 0;
+  background-color: $colorWhite;
+  overflow: hidden;
+  flex: 1 0 auto;
+
+  @include only-mobile {
+    padding: $sectionIndentMobile 0;
+  }
+
+  &.overflow-visible {
+    overflow: visible;
+  }
+
+  &.transparent {
+    background-color: transparent;
+  }
+
+  p {
+    @extend .body-17;
+    color: $colorParagraph;
+
+    @include only-mobile {
+      font-size: 15px;
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &.white {
+      color: $colorWhite
+    }
+  }
+
+  .ul {
+    @extend .reset-list;
+    margin-bottom: 32px;
+
+    @include mobile {
+      margin-bottom: 24px;
+    }
+
+    &:first-child, &:last-child {
+      margin-bottom: 0;
+    }
+
+    li {
+      @extend .body-17;
+      font-weight: 300;
+      position: relative;
+      padding: 0 0 0 26px;
+      font-size: 20px;
+
+      &:not(:last-child) {
+        margin-bottom: $indent12;
+      }
+
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 3px;
+        left: 0;
+        margin: 0;
+        width: 16px;
+        height: 16px;
+        border-radius: 100%;
+        background-color: $colorPrimary;
+      }
+    }
+
+    &.check-marks {
+      li {
+        &:before {
+          //background-image: url('../img/icons/check-mark.svg');
+          background-position: center;
+          background-size: 10px 7px;
+          background-repeat: no-repeat;
+        }
+      }
+    }
+
+    &.white-text {
+      li {
+        color: $colorWhite;
+
+        &:before {
+          background-color: $colorWhite;
+        }
+      }
+    }
+
+    &.without-markers {
+      padding: 0;
+
+      li {
+        padding: 0;
+      }
+
+      li:before, li:after {
+        content: none;
+        display: none;
+      }
+    }
+  }
+}
+
+.rounded-block {
+  display: block;
+  width: 100%;
+  border-radius: $borderRadius10;
+  background-color: $colorWhite;
+  cursor: pointer;
+  filter: drop-shadow($shadow);
+}
+
+
+.tabs-block {
+  .tab {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+}
+
+.tabs-switchers {
+  align-self: flex-start;
+  display: flex;
+  margin-bottom: 24px;
+  padding: 2px;
+  width: 100%;
+  border-radius: $borderRadius4;
+
+  @include desktop {
+    margin-bottom: auto;
+  }
+
+  .switch {
+    padding: $indent8 0;
+    border-radius: $borderRadius4;
+    color: $colorPrimary;
+    text-align: center;
+
+    &.w-50 {
+      width: 50%;
+    }
+
+    @include desktop {
+      &:not(.active) {
+        &:hover {
+          background: $colorPrimaryHover;
+        }
+      }
+    }
+
+    @include xs-mobile {
+      font-size: 14px;
+      line-height: 18px;
+    }
+
+    @include xxs-mobile {
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    &.active {
+      color: $colorWhite;
+    }
+  }
+}
+
+
+.any-image {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+
+  &:before {
+    content: '';
+    display: block;
+    padding-top: 56.25%;
+  }
+
+  .img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.image-text-items {
+  .item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    @include tablet {
+      flex-direction: column;
+    }
+
+    .image {
+      flex-shrink: 0;
+      display: block;
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+      object-position: center;
+
+      @include tablet {
+        margin: 0 0 20px 0;
+      }
+
+      @include only-mobile {
+        margin: 0 20px 0 0;
+      }
+    }
+
+    .text {
+      margin: 0;
+
+      @include tablet {
+        width: 100%;
+        text-align: center;
+      }
+
+      @include xl-mobile {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+
+.submit-group {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+
+  .submit {
+    width: 100%;
+    margin: 0 0 15px 0;
+  }
+
+  .consent {
+    @extend .caption-14;
+    color: $colorParagraph;
+    margin: 0;
+    width: 100%;
+
+    &-link {
+      color: $colorPrimary;
+    }
+  }
+}
+
+
+

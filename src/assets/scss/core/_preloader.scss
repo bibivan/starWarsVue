@@ -1,0 +1,54 @@
+.preloader {
+  overflow: hidden;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $colorWhite;
+
+  &.in-block {
+    position: static;
+    width: 100%;
+    height: auto;
+  }
+
+  .spinner {
+    position: relative;
+    width: 85px;
+    height: 85px;
+
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      top: calc(50% - 25px);
+      left: calc(50% - 25px);
+      display: block;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+
+    &:before {
+      opacity: 0.2;
+    }
+
+    &:after {
+      border-bottom: 5px solid transparent;
+      animation: 1s linear 0s normal none infinite running rot;
+    }
+  }
+
+  @keyframes rot {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}

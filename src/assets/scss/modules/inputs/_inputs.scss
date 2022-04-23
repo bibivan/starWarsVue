@@ -1,0 +1,133 @@
+.input-block {
+  position: relative;
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  .field {
+    display: block;
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    margin: 0;
+    border: none;
+
+    &:hover {
+    }
+
+    &.success {
+      input {
+        -webkit-box-shadow: 0 0 0px 50px $colorWhite inset;
+      }
+    }
+
+    &.focused {
+      input {
+        background-color: $colorWhite;
+        border-color: $colorPrimary;
+        -webkit-box-shadow: 0 0 0px 50px $colorWhite inset;
+
+        &::placeholder {
+          opacity: 0;
+        }
+      }
+
+
+    }
+
+    &.empty {
+      .label {
+      }
+
+      input {
+
+      }
+    }
+
+    &.required {
+      .label {
+        &:after {
+          content: " *";
+        }
+      }
+    }
+  }
+
+  .field:not(.focused) {
+    &.error {
+      input {
+        border-color: $colorError;
+        background-color: $colorWhite;
+        -webkit-box-shadow: 0 0 0px 50px $colorWhite inset;
+      }
+    }
+  }
+
+  .label {
+    @extend .body-17;
+    display: block;
+    margin-bottom: 9px;
+
+    @include only-mobile {
+      font-size: 15px;
+    }
+  }
+
+  input {
+    @extend .caption-15;
+    @extend .flex-center;
+
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    padding: 13px 15px;
+    width: 100%;
+    height: 50px;
+    border: 1px solid $colorSecondaryOpacity;
+    border-radius: $borderRadius10;
+    color: $colorSecondary;
+    caret-color: $colorSecondary;
+    background: transparent;
+
+    &::placeholder {
+      color: $colorCaption;
+    }
+  }
+
+  textarea {
+    @extend .body-17;
+    display: block;
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    padding: 13px 15px;
+    width: 100%;
+    height: auto;
+    min-height: 50px;
+    background: transparent;
+    resize: none;
+    overflow: hidden;
+
+    &::placeholder {
+      @extend .caption-15;
+      color: $colorCaption;
+    }
+  }
+
+  .error-message {
+    @extend .caption-14;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    display: none;
+    margin: 0;
+    color: $colorError !important;
+  }
+
+  &.error {
+    .error-message {
+      display: block;
+    }
+  }
+}

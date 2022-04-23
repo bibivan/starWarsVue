@@ -1,0 +1,66 @@
+.fadeInUp {
+  opacity: 0;
+  transform: translate3d(0, 100%, 0);
+}
+
+.lozad[data-src],
+.lozad[data-background-image] {
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: .2s;
+  transition-timing-function: ease-in;
+
+  &[data-loaded="true"] {
+    opacity: 1;
+  }
+}
+
+.transitionTransformOpacity {
+  transition-property: transform, opacity;
+  transition-duration: 266ms, 200ms;
+  transition-delay: 0ms, 0ms;
+  transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.open-modal {
+  .fadeInUp {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+
+  .delay700 {
+    transition-delay: 700ms, 700ms;
+  }
+
+  .delay900 {
+    transition-delay: 900ms, 900ms;
+  }
+
+  .delay1100 {
+    transition-delay: 1100ms, 1100ms;
+  }
+
+  .delay1300 {
+    transition-delay: 1300ms, 1300ms;
+  }
+
+  .delay1500 {
+    transition-delay: 1500ms, 1500ms;
+  }
+
+  .delay1700 {
+    transition-delay: 1700ms, 1700ms;
+  }
+
+  .delay1900 {
+    transition-delay: 1900ms, 1900ms;
+  }
+
+  .delay2100 {
+    transition-delay: 2100ms, 2100ms;
+  }
+
+  .delay2300 {
+    transition-delay: 2300ms, 2300ms;
+  }
+}

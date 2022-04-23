@@ -1,0 +1,80 @@
+@import "variables";
+
+.h1-bold {
+  font-family: $fontAccent;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 130%;
+  color: $colorSecondary;
+  margin: $indent50 0;
+
+  @include only-mobile {
+    margin: $indent30 0;
+  }
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.h2-bold {
+  @extend .h1-bold;
+  font-size: 40px;
+}
+
+.h3-bold {
+  @extend .h1-bold;
+  font-size: 24px;
+}
+
+.h4-bold {
+  @extend .h1-bold;
+  font-size: 20px;
+}
+
+.h5-bold {
+  @extend .h1-bold;
+  font-size: 16px;
+}
+
+.caption-15 {
+  color: $colorCaption;
+  font-family: $fontBase;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 130%;
+}
+
+.caption-14 {
+  @extend .caption-15;
+  font-size: 14px;
+}
+
+.body-17 {
+  color: $colorSecondary;
+  font-family: $fontBase;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 130%;
+}
+
+.body-15 {
+  @extend .body-17;
+  font-size: 15px;
+}
+
+.body-15 {
+  @extend .body-17;
+  font-size: 14px;
+}
+
+.menu-15 {
+  @extend .body-17;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 18px;
+}

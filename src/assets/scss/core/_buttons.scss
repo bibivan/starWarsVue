@@ -1,0 +1,100 @@
+.btn {
+  overflow: hidden;
+  position: relative;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 45px;
+  min-width: 210px;
+  min-height: 50px;
+  border: none;
+  border-radius: $borderRadius10;
+  color: $colorSecondary;
+  font-family: $fontAccent;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 22px;
+  text-align: center;
+  background-color: $colorPrimary;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out, border 0.15s ease-in-out;
+
+  @include x-mobile {
+    min-width: 180px;
+    padding: 14px 20px;
+  }
+
+  &:hover {
+    @include desktop {
+      background-color: $colorPrimaryHover;
+    }
+  }
+
+  &:active {
+    background-color: $colorPrimaryActive;
+  }
+
+  &:disabled, .disabled {
+    background-color: $colorDisabled;
+  }
+
+  &.small {
+    min-height: 38px;
+    padding: 8px 45px;
+  }
+
+  &.secondary {
+    min-height: auto;
+    padding: 11px 20px;
+    border: 1px solid $colorSecondaryOpacity;
+    min-width: 110px;
+    color: $colorParagraph;
+    font-family: $fontBase;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+    background-color: transparent;
+
+    &:hover {
+      @include desktop {
+        color: $colorSecondary;
+        border: 1px solid $colorSecondary;
+      }
+    }
+
+    &:active, &.active {
+      color: $colorWhite;
+      background-color: $colorSecondary;
+    }
+  }
+
+  &.width-300 {
+    max-width: 300px;
+    width: 100%;
+  }
+}
+
+.secondary-buttons-group {
+  display: flex;
+  align-items: center;
+
+  .btn {
+    &:not(:last-child) {
+      margin: 0 20px 0 0;
+
+      @include xl-mobile {
+        margin: 0 0 10px 0;
+
+      }
+    }
+
+  }
+}

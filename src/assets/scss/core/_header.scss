@@ -1,0 +1,85 @@
+@import "variables";
+
+.header {
+  position: relative;
+  z-index: 1;
+  padding: 10px 0;
+
+  &:before {
+    content: '';
+    position: absolute;
+    display: block;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-image: linear-gradient(to right, #462523 0, #cb9b51 22%, #f6e27a 45%, #f6f2c0 50%, #f6e27a 55%, #cb9b51 78%, #462523 100%);
+  }
+
+  .site-logo {
+    @extend .h1;
+    display: block;
+    margin: 0;
+    width: 100%;
+    color: transparent;
+    text-align: center;
+    text-transform: uppercase;
+    background-image: linear-gradient(to right, #462523 0, #cb9b51 22%, #f6e27a 45%, #f6f2c0 50%, #f6e27a 55%, #cb9b51 78%, #462523 100%);
+    -webkit-background-clip: text;
+    transition: transform 0.3s;
+  }
+
+  .burger {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    width: 21px;
+    height: 14px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    user-select: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+
+    &:before {
+      content: '';
+      position: absolute;
+      display: block;
+      left: calc(50% - 25px);
+      top: calc(50% - 25px);
+      width: 50px;
+      height: 50px;
+    }
+
+    .line {
+      display: block;
+      height: 2px;
+      width: 21px;
+      background-color: $colorSecondary;
+      transition: transform .3s ease-in-out, background-color 0.3s ease-in-out;
+      transform-origin: left;
+
+      &.top {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      &.bottom {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+    }
+  }
+
+}
+
+
+

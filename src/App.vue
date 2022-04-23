@@ -1,32 +1,47 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <header class="header">
+      <div class="container">
+        <a class="site-logo" href="#">
+          star wars
+        </a>
+      </div>
+    </header>
     <router-view/>
+
+    <div class="stars"></div>
+    <div class="twinkling"></div>
   </div>
 </template>
 
+<script>
+</script>
+
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+
+@font-face {
+  font-family: 'AnakinmonoRegular';
+  src: url('./assets/fonts/AnakinmonoRegular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+@font-face {
+  font-family: 'StarJedi';
+  src: url('./assets/fonts/StarJedi.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
+
+@font-face {
+  font-family: 'StarJediHollow';
+  src: url('./assets/fonts/StarJediHollow.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@import "./assets/scss/style";
 </style>
