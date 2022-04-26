@@ -7,7 +7,7 @@
   font-size: 64px;
   line-height: 130%;
   color: transparent;
-  background-image: linear-gradient(#462523 0, #cb9b51 22%, #f6e27a 45%, #f6f2c0 50%, #f6e27a 55%, #cb9b51 78%, #462523 100%);
+  background-image: $silverGradient;
   -webkit-background-clip: text;
 
   @include only-mobile {
@@ -57,7 +57,7 @@
 }
 
 .body-17 {
-  color: $colorPrimary;
+  color: #c0c0c0;
   font-family: $fontBase;
   font-weight: 400;
   font-size: 17px;

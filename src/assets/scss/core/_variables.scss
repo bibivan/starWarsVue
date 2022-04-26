@@ -3,9 +3,9 @@ $fontAccent: 'StarJedi', sans-serif;
 $fontAccentHollow: 'StarJediHollow', sans-serif;
 
 //colors
-$colorPrimary: #ffcc00;
-$colorPrimaryHover: #f8c600;
-$colorPrimaryActive: #e5b800;
+$colorPrimary: #a2a2a2;
+$colorPrimaryHover: brightness($colorPrimary, 0.9);
+$colorPrimaryActive: #a5a5a5;
 $colorSecondary: #333333;
 $colorSecondaryOpacity: transparentize($colorSecondary, 0.9);
 $colorDisabled: #ebebeb;
@@ -26,6 +26,10 @@ $colorAlto: #dbdbdb;
 $colorCuriousBlue: #1c8adb;
 
 $colorBg: $colorWhite;
+
+//gradients
+$silverGradient: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);
+$goldenGradient: linear-gradient(#462523 0, #cb9b51 22%, #f6e27a 45%, #f6f2c0 50%, #f6e27a 55%, #cb9b51 78%, #462523 100%);
 
 //shadows
 $shadow: 0px 0px 20px transparentize(#333333, 0.92);
