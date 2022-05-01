@@ -2,12 +2,16 @@
   <main class="main">
     <section class="section">
       <div class="container">
-        <h1 class="h2">Episodes</h1>
-        <div class="flex-grid wrap">
-          <router-link class="col w-33" :to="{ name: 'fimPage' }" v-for="film in films"
-                       :key="film.id">
-            <FilmCard :film="film"/>
-          </router-link>
+        <div class="film">
+          <div class="film_image-wrapper">
+            <img class="film_img" src="/img/posters/poster-2.jpg"
+                 :alt="2">
+          </div>
+          <div class="film_description">
+            <div class="film_name body-17 no-margin">
+              {{ 2 }}
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -16,11 +20,9 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex';
-import FilmCard from '../components/FilmsCard/FilmCard.vue';
 
 export default {
-  name: 'MainPage',
-  components: { FilmCard },
+  name: 'FilmPage',
   data() {
     return {
     };

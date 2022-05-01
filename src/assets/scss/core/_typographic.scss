@@ -260,151 +260,73 @@ a, .link {
 }
 
 
-.tabs-block {
-  .tab {
-    display: none;
-
-    &.active {
-      display: block;
-    }
-  }
+.stars, .twinkling {
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  width:100%;
+  height: 100%;
+  display:block;
 }
 
-.tabs-switchers {
-  align-self: flex-start;
-  display: flex;
-  margin-bottom: 24px;
-  padding: 2px;
-  width: 100%;
-  border-radius: $borderRadius4;
-
-  @include desktop {
-    margin-bottom: auto;
-  }
-
-  .switch {
-    padding: $indent8 0;
-    border-radius: $borderRadius4;
-    color: $colorPrimary;
-    text-align: center;
-
-    &.w-50 {
-      width: 50%;
-    }
-
-    @include desktop {
-      &:not(.active) {
-        &:hover {
-          background: $colorPrimaryHover;
-        }
-      }
-    }
-
-    @include xs-mobile {
-      font-size: 14px;
-      line-height: 18px;
-    }
-
-    @include xxs-mobile {
-      font-size: 12px;
-      line-height: 16px;
-    }
-
-    &.active {
-      color: $colorWhite;
-    }
-  }
+.stars {
+  background:#000 url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
+  z-index: 1;
 }
 
-
-.any-image {
-  position: absolute;
+.twinkling {
+  background-image: url(https://i.postimg.cc/CLpNr4PF/twinkling.png);
+  animation: 3s twinkle infinite;
+  animation-timing-function: linear;
   z-index: 0;
+}
+
+@keyframes twinkle {
+  from {backrgound-position: 0}
+  to {background-position: -100px 0}
+}
+
+
+.preloader {
+  position: fixed;
   top: 0;
-  right: 0;
-  bottom: 0;
   left: 0;
-  display: block;
+  width: 100vw;
+  height: 100vh;
 
   &:before {
     content: '';
+    position: absolute;
+    z-index: 3;
+    top: calc(50% - 45px);
+    left: calc(50% - 45px);
     display: block;
-    padding-top: 56.25%;
+    width: 90px;
+    height: 90px;
+    //border: 2px solid $colorPrimary;
+    border-radius: 50%;
+    filter: contrast(2);
+    background: url('../public/img/preloader.gif') right -21px bottom 51% / auto no-repeat;
   }
 
-  .img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  .stars, .twinkling {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
   }
-}
 
-.image-text-items {
-  .item {
-    display: flex;
-    align-items: center;
-    width: 100%;
+  .stars {
+    z-index: 1;
+  }
 
-    @include tablet {
-      flex-direction: column;
-    }
-
-    .image {
-      flex-shrink: 0;
-      display: block;
-      width: 64px;
-      height: 64px;
-      object-fit: contain;
-      object-position: center;
-
-      @include tablet {
-        margin: 0 0 20px 0;
-      }
-
-      @include only-mobile {
-        margin: 0 20px 0 0;
-      }
-    }
-
-    .text {
-      margin: 0;
-
-      @include tablet {
-        width: 100%;
-        text-align: center;
-      }
-
-      @include xl-mobile {
-        font-size: 20px;
-      }
-    }
+  .twinkling {
+    z-index: 0;
   }
 }
 
-
-.submit-group {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  flex-direction: column;
-
-  .submit {
-    width: 100%;
-    margin: 0 0 15px 0;
-  }
-
-  .consent {
-    @extend .caption-14;
-    color: $colorParagraph;
-    margin: 0;
-    width: 100%;
-
-    &-link {
-      color: $colorPrimary;
-    }
-  }
-}
 
 
 

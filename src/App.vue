@@ -1,5 +1,9 @@
 <template>
   <div id="app">
+    <div class="preloader" v-if="loading">
+      <div class="stars"></div>
+      <div class="twinkling"></div>
+    </div>
     <header class="header">
       <div class="container">
         <a class="site-logo" href="#">
@@ -15,6 +19,15 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
+export default {
+  methods: {
+    ...mapGetters({
+      loading: 'getLoadingStatus',
+    }),
+  },
+};
 </script>
 
 <style lang="scss">

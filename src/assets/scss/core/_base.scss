@@ -56,6 +56,11 @@ img {
   width: 100%;
 }
 
+.main {
+  position: relative;
+  z-index: 3;
+}
+
 .container {
   margin: 0 auto;
   padding: 0 20px;
